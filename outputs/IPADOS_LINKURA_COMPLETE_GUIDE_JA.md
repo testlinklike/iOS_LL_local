@@ -636,7 +636,8 @@ LiveContainer全体の設定に `JITイネーブラー` がある場合は `Stik
 
 ```json
 "FesArchive.ValidTicketRepair.Enable": false,
-"WithMeets.After.ValidAdmissionRepair.Enable": false
+"WithMeets.After.ValidAdmissionRepair.Enable": false,
+"WithMeets.Archive.PlayPauseButton.Enable": false
 ```
 
 保存後、JSON編集画面で両方がBooleanの `false` と表示されることを確認します。
