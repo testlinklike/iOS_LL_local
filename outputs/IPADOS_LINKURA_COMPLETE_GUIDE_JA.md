@@ -1230,30 +1230,7 @@ Tweak更新後にクラッシュする、一覧へ入るだけで落ちる、設
 
 ---
 
-## 23. 他の人へ渡してよいもの・いけないもの
-
-### 渡してよいもの
-
-- この手順書
-- IPA変換用スクリプト
-- LinkuraVisualsIOS 0.8.1の配布ZIP
-  - AGPL-3.0-onlyの条件に従い、同梱ソース・NOTICE・ライセンスを保持する
-- 自分で作成した設定例
-  - 個人情報、トークン、ペアリング情報を除く
-
-### 渡してはいけないもの
-
-- 元のIPA
-- 改変済みIPA
-- Apple Accountの情報
-- 2ファクタ認証コード
-- SideStoreの署名証明書・パスワード
-- StikDebugのペアリングファイル
-- LinkLikeIDの認証情報やセッショントークン
-
----
-
-## 24. 確認済み環境と限界
+## 23. 確認済み環境と限界
 
 実機確認例:
 
@@ -1282,14 +1259,10 @@ Tweak更新後にクラッシュする、一覧へ入るだけで落ちる、設
 
 ---
 
-## 25. 最終チェックリスト
+## 24. 最終チェックリスト
 
 ### 基礎導入
 
-- [ ] 復号済みIPAを既に正当に所持し、IPA入手・復号が本ガイドの対象外だと理解した
-- [ ] 自分で正当に入手した復号済み5.0.1 IPAを使用した
-- [ ] 改変IPAを他人へ配布していない
-- [ ] HASU第三者APIのリスクを確認した
 - [ ] Macで `python3 --version` が成功した
 - [ ] 通常版パッチを作成した
 - [ ] LiveContainer＋SideStoreを公式手順で導入した
@@ -1318,7 +1291,7 @@ Tweak更新後にクラッシュする、一覧へ入るだけで落ちる、設
 
 ---
 
-## 26. 関連資料
+## 25. 関連資料
 
 - [LiveContainer公式ドキュメント](https://livecontainer.github.io/docs/)
 - [LiveContainer＋SideStore](https://livecontainer.github.io/docs/installation/lc_sidestore)
