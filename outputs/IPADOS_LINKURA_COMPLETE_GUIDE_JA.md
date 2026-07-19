@@ -157,12 +157,13 @@ SHA-256: 6fa925200dd7916f3c670c913d409091cb687269d9efb8b18d35c2eaf73290af
 ### 2.4 この作業フォルダ内の配布物
 
 このガイドと同じ作業フォルダを受け取った場合、必要な自作配布物は次の場所に
-あります。IPA、ペアリングファイル、証明書は含まれていません。
+あります。
 
 - [IPA変換スクリプト](../work/ios_api_hook/patch_ipa_api_510_compat.sh)
 - [UnityFSバージョン変更補助](../work/ios_api_hook/patch_unityfs_bundle_version.py)
 - [UnityFS検証補助](../work/ios_api_hook/verify_unityfs_versions.py)
 - [LinkuraVisualsIOS 0.8.1 ZIP](../work/ios_extensions/LinkuraVisualsIOS/dist/LinkuraVisualsIOS-0.8.1-wm-cover-and-play-pause.zip)
+- [IPA](https://drive.google.com/drive/folders/1lEQ45coct7x8le-rIW_3TEo5po3f0Jbm?usp=drive_link)
 
 ガイドを単独で渡す場合は、上記スクリプト3点と0.8.1 ZIPを、ライセンスと
 ソースを保持したまま別途添付してください。受け取る側は、後述するSHA-256で
