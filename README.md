@@ -1,4 +1,4 @@
-# Linkura iPadOS Guide
+# Linkura iPadOS/iOS Guide
 
 iPadOS/iOS版リンクラ HASU API版とLinkuraVisualsIOS 0.8.1の導入ガイドです。
 
