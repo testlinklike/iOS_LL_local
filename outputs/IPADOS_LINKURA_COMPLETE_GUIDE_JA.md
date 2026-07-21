@@ -620,7 +620,7 @@ LiveContainerの調整画面にスイッチが表示される場合は、4ファ
 3. 「設定」を開きます。
 4. `調整フォルダ` に `LinkuraVisualsIOS` を選びます。
 5. `JITで起動` をオンにします。
-6. iPadOS 26では `JIT起動スクリプト` に `Geode.js` を選びます。
+6. iPadOS/iOS 26では `JIT起動スクリプト` に `Geode.js` を選びます。
 
 LiveContainer全体の設定に `JITイネーブラー` がある場合は `StikDebug` を選びます。
 
