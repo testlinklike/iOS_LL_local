@@ -1,4 +1,4 @@
-# iPadOS版リンクラ HASU API版＋LinkuraVisualsIOS 0.8.1 完全導入ガイド
+# iPadOS/iOS版リンクラ HASU API版＋LinkuraVisualsIOS 0.8.1 完全導入ガイド
 
 更新日: 2026年7月20日
 
