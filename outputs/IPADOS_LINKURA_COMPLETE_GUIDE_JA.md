@@ -564,20 +564,9 @@ Tweakが読み込まれない、クラッシュする等の原因になります
 使用するのは次の配布物だけです。
 
 ```text
-LinkuraVisualsIOS-0.8.1-wm-cover-and-play-pause.zip
+LinkuraVisualsIOS-0.9.0-fes-seek-joystick-sensitivity.zip
 ```
 
-古い0.7.x、診断版、個別修正版を選ばないでください。
-
-配布物の確認用SHA-256:
-
-```text
-ZIP:
-e3aa1b1586681c867e8f2ecbf2980e648d8ca3cb9d276d168b14862336874120
-
-単体dylib:
-e46bedef60c190101d5089c80e775cf103f5c9068c708b70259b23b73237d6c4
-```
 
 ### 12.1 ZIPを展開する
 
