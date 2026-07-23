@@ -559,7 +559,7 @@ Tweakが読み込まれない、クラッシュする等の原因になります
 
 ---
 
-## 12. LinkuraVisualsIOS 0.8.1を導入する
+## 12. LinkuraVisualsIOS 0.9.0を導入する
 
 使用するのは次の配布物だけです。
 
@@ -613,26 +613,7 @@ LiveContainerの調整画面にスイッチが表示される場合は、4ファ
 
 LiveContainer全体の設定に `JITイネーブラー` がある場合は `StikDebug` を選びます。
 
-### 12.4 初回JIT起動前に権利修復を安全な状態へ戻す
-
-0.8.1配布ZIPのJSONには、今回の実機検証に使った権利誤判定修復値が含まれて
-います。他の利用者は、**初回JIT起動より前に** `LinkuraVisualsIOS.json` を
-編集し、次の2項目をいったん `false` にしてください。
-
-```json
-"FesArchive.ValidTicketRepair.Enable": false,
-"WithMeets.After.ValidAdmissionRepair.Enable": false,
-"WithMeets.Archive.PlayPauseButton.Enable": false
-```
-
-保存後、JSON編集画面で両方がBooleanの `false` と表示されることを確認します。
-基礎機能とカメラUIの動作確認が終わったあと、正規所持済みの権利が誤判定される
-場合に限り、第17.3節・第17.4節と、第21.16節・第21.17節を読み、実際の
-所持内容へ合わせて有効にします。
-
-この確認を済ませるまで、JITを有効にしてリンクラを起動しないでください。
-
-### 12.5 初回JIT起動
+### 12.4 初回JIT起動
 
 1. Wi-Fiへ接続します。
 2. LocalDevVPNを `Connected` にします。
