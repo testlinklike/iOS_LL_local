@@ -861,22 +861,10 @@ LinkuraVisualsIOS.backup.json
 - 最後の項目以外は行末のカンマを忘れない
 - `Compatibility.BinaryVersion` は変更しない
 
-誤りの例:
-
-```json
-"WithMeets.Archive.IarcFullSeek.Enable ": true
-```
-
-正しい例:
-
-```json
-"WithMeets.Archive.IarcFullSeek.Enable": true
-```
-
 編集後はリンクラとLiveContainerを完全終了し、LocalDevVPN＋StikDebugで
 JITを取り直して起動します。
 
-### 17.3 主な設定と0.8.1配布値
+### 17.3 主な設定と0.8.7配布値
 
 | キー | 配布値 | 内容 |
 |---|---:|---|
@@ -908,7 +896,7 @@ JITを取り直して起動します。
 | `WithMeets.Archive.IarcReplayOverlay.Suppress` | `true` | 誤REPLAY・暗転・自動停止を抑止 |
 | `WithMeets.Archive.OrientationRepair.Enable` | `true` | WM縦横修復 |
 | `WithMeets.Archive.RenderImageCover.Suppress` | `true` | 固定待機カバーを抑止 |
-| `WithMeets.Archive.PlayPauseButton.Enable` | `true` | WM再生／一時停止。動作未確認なので`false`へ |
+| `WithMeets.Archive.PlayPauseButton.Enable` | `true` | WM再生／一時停止 |
 | `WithMeets.After.ValidAdmissionRepair.Enable` | `true` | 実機検証用配布値。初回JIT前に`false`へ変更 |
 | `CameraControl.UI.Enable` | `true` | カメラUI |
 | `CameraControl.UI.ScreenshotHide.Enable` | `true` | UI一時非表示 |
