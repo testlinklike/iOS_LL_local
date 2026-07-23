@@ -863,44 +863,79 @@ LinkuraVisualsIOS.backup.json
 
 編集後はリンクラとLiveContainerを完全終了し、LocalDevVPN＋StikDebugで
 JITを取り直して起動します。
-
-### 17.3 主な設定と0.8.7配布値
+### 17.3 主な設定と0.9.0配布値
 
 | キー | 配布値 | 内容 |
 |---|---:|---|
-| `Compatibility.BinaryVersion` | `"5.0.1"` | 変更禁止 |
+| `Compatibility.BinaryVersion` | `"5.0.1"` | IL2CPP解決対象。変更禁止 |
 | `TargetFPS` | `60` | 目標FPS |
-| `AntiAliasingSamples` | `4` | AA。通常1/2/4/8 |
+| `AntiAliasingSamples` | `4` | AA。通常は1/2/4/8 |
 | `LiveStream.Quality.Low.ShortSide` | `720` | LiveStream Low短辺 |
 | `LiveStream.Quality.Medium.ShortSide` | `1080` | LiveStream Medium短辺 |
 | `LiveStream.Quality.High.ShortSide` | `1440` | LiveStream High短辺 |
-| `Story.Quality.Low.Factor` | `0.6` | Story Low倍率 |
-| `Story.Quality.Medium.Factor` | `1.0` | Story Medium倍率 |
-| `Story.Quality.High.Factor` | `1.4` | Story High倍率 |
+| `Story.Quality.Low.Factor` | `0.6` | Story Low解像度倍率 |
+| `Story.Quality.Medium.Factor` | `1.0` | Story Medium解像度倍率 |
+| `Story.Quality.High.Factor` | `1.4` | Story High解像度倍率 |
 | `MagicaCloth.SimulationFrequency` | `60` | 布シミュレーション周波数 |
 | `MagicaCloth.MaxSimulationCountPerFrame` | `3` | 1フレーム最大計算回数 |
-| `Enable.FesCameraHook` | `true` | Fesカメラ調整 |
-| `FesArchive.ValidTicketRepair.Enable` | `true` | 実機検証用配布値。初回JIT前に`false`へ変更 |
-| `FesArchive.ValidTicketRepair.TicketRank` | `6` | 実機検証用配布値はS。実所持ランク以外に使わない |
-| `FesArchive.ValidTicketRepair.SelectableCameraTypes` | `[1,2,3,4]` | 実機検証用配布値。実際に利用できるカメラだけに合わせる |
-| `ActivityRecord.HideBackground` | `false` | 背景命令を除外 |
+| `Enable.FesCameraHook` | `true` | Fesカメラ調整の基礎Hook |
+| `FesArchive.CameraControl.Enable` | `true` | Fesアーカイブの純正選択中カメラへ自由カメラUIを接続 |
+| `FesArchive.SeekBar.Enable` | `true` | Fesアーカイブでアプリ標準シークバーを有効化 |
+| `FesArchive.MotionCaptureReplay.Enable` | `true` | 確認済みFesアーカイブをALST/IARCモーション再生へ補完 |
+| `FesArchive.MotionCaptureReplay.UrlMap` | `2025-12-28の1件` | 確認済みHLS URLから`.md` URLへの完全一致対応 |
+| `FesArchive.ValidTicketRepair.Enable` | `true` | 正規所持済み対象のチケット誤判定を補正。未所持なら`false` |
+| `FesArchive.ValidTicketRepair.TicketRank` | `6` | 配布値はSランク。実際の所持内容に合わせる |
+| `FesArchive.ValidTicketRepair.SelectableCameraTypes` | `[1,2,3,4]` | Dynamic／Arena／Stand／SchoolIdle |
+| `FesArchive.ValidTicketRepair.TargetArchiveIds` | `対象2件` | 補正を許可するlive IDの完全一致リスト |
+| `ActivityRecord.HideBackground` | `false` | 活動記録の背景命令を除外 |
 | `ActivityRecord.HideTransition` | `false` | 暗転・遷移命令を除外 |
-| `ActivityRecord.HideNonCharacter3D` | `false` | キャラ以外の3Dを除外 |
-| `ActivityRecord.HideDepthOfField` | `false` | 被写界深度を除外 |
-| `ActivityRecord.HidePresetEffect` | `false` | プリセット効果を除外 |
-| `ActivityRecord.CameraControl.Enable` | `true` | 活動記録カメラ |
-| `ActivityRecord.LandscapeRepair.Enable` | `true` | 活動記録の縦横修復 |
-| `WithMeets.CameraControl.Enable` | `true` | WM IARCカメラ |
-| `WithMeets.Archive.MotionCaptureReplay.Enable` | `true` | 対応WMをIARC優先 |
-| `WithMeets.Archive.IarcFullSeek.Enable` | `true` | WM IARC全長シーク |
-| `WithMeets.Archive.IarcReplayOverlay.Suppress` | `true` | 誤REPLAY・暗転・自動停止を抑止 |
-| `WithMeets.Archive.OrientationRepair.Enable` | `true` | WM縦横修復 |
-| `WithMeets.Archive.RenderImageCover.Suppress` | `true` | 固定待機カバーを抑止 |
-| `WithMeets.Archive.PlayPauseButton.Enable` | `true` | WM再生／一時停止 |
-| `WithMeets.After.ValidAdmissionRepair.Enable` | `true` | 実機検証用配布値。初回JIT前に`false`へ変更 |
-| `CameraControl.UI.Enable` | `true` | カメラUI |
-| `CameraControl.UI.ScreenshotHide.Enable` | `true` | UI一時非表示 |
-| `CameraControl.Joystick.Enable` | `true` | 右ジョイスティック |
+| `ActivityRecord.HideNonCharacter3D` | `false` | キャラクター以外の3D命令を除外 |
+| `ActivityRecord.HideDepthOfField` | `false` | 被写界深度命令を除外 |
+| `ActivityRecord.HidePresetEffect` | `false` | プリセットポストエフェクト命令を除外 |
+| `ActivityRecord.CameraControl.Enable` | `true` | 活動記録の自由カメラ |
+| `ActivityRecord.LandscapeRepair.Enable` | `true` | 活動記録中の縦横画面修復 |
+| `ActivityRecord.LandscapeRepair.RebindGraceSeconds` | `5.0` | 回転後のStoryCamera再取得猶予秒数 |
+| `WithMeets.CameraControl.Enable` | `true` | WMの3D `StreamingIarc`自由カメラ |
+| `WithMeets.Archive.MotionCaptureReplay.Enable` | `true` | `.md`データのあるWMをALST/IARCで再生 |
+| `WithMeets.Archive.IarcFullSeek.Enable` | `true` | WM/IARCアーカイブ全長へのシーク |
+| `WithMeets.Archive.IarcReplayOverlay.Suppress` | `true` | 誤REPLAY・暗転・入力遮断・自動停止を抑止 |
+| `WithMeets.Archive.OrientationRepair.Enable` | `true` | WMアーカイブの縦横画面修復 |
+| `WithMeets.Archive.OrientationRepair.RebindGraceSeconds` | `5.0` | 回転・終了時のモデル再取得猶予秒数 |
+| `WithMeets.Archive.RenderImageCover.Suppress` | `true` | 開始前・AFTER区間の固定待機カバーを抑止 |
+| `WithMeets.Archive.PlayPauseButton.Enable` | `true` | WMシークバー左に再生／一時停止ボタンを表示 |
+| `WithMeets.After.ValidAdmissionRepair.Enable` | `true` | 正規解放済みAFTERの入場誤判定を補正。未解放なら`false` |
+| `CameraControl.UI.Enable` | `true` | 共通カメラ操作パネル |
+| `CameraControl.UI.ScreenshotHide.Enable` | `true` | 左端タブでカメラUIと再生ボタンを一時非表示 |
+| `CameraControl.Joystick.Enable` | `true` | 右側の連続移動ジョイスティック |
+| `CameraControl.Joystick.MoveSpeed` | `0.8` | `×1`時の移動速度。UIで`×1 / ×5 / ×10 / ×20`を切替 |
+| `CameraControl.HoldYawDegreesPerSecond` | `60.0` | 右側`← / →`長押し時の左右首振り速度 |
+| `CameraControl.HoldPitchDegreesPerSecond` | `60.0` | 右側`↑ / ↓`長押し時の上下首振り速度 |
+| `CameraControl.HoldPerspectiveZoomPerSecond` | `50.0` | 透視カメラの連続ズーム速度 |
+| `CameraControl.HoldOrthographicZoomPerSecond` | `10.0` | 平行投影カメラの連続ズーム速度 |
+| `CameraControl.MoveStep` | `0.15` | 移動ボタン1回の距離 |
+| `CameraControl.RotateStepDegrees` | `3.0` | 回転ボタン1回の角度 |
+| `CameraControl.PerspectiveZoomStep` | `2.0` | 透視カメラのFOV変更量 |
+| `CameraControl.PerspectiveZoomMinimum` | `10.0` | 透視カメラFOV下限 |
+| `CameraControl.PerspectiveZoomMaximum` | `100.0` | 透視カメラFOV上限 |
+| `CameraControl.OrthographicZoomStep` | `0.5` | 平行投影カメラのSize変更量 |
+| `CameraControl.OrthographicZoomMinimum` | `0.5` | 平行投影Size下限 |
+| `CameraControl.OrthographicZoomMaximum` | `30.0` | 平行投影Size上限 |
+
+Fesアーカイブの完全一致対象は、0.9.0配布JSONでは次の値です。
+
+```json
+"FesArchive.ValidTicketRepair.TargetArchiveIds": [
+  "af23d18c-ba54-41cd-b69e-af391744a6e9",
+  "8ccceeea-2c46-4ecd-a57d-703376ac5c81"
+],
+"FesArchive.MotionCaptureReplay.UrlMap": {
+  "https://assets.link-like-lovelive.app/archive/hls/20251228/index.m3u8": "https://assets.link-like-lovelive.app/archive/alst/20251228195000-5f0cc1ec-e91e-4287-9263-0327686c0b07/811c9dc5a5f86.md"
+}
+```
+
+`×1 / ×5 / ×10 / ×20`はJSON配列ではなく、0.9.0のバイナリに
+実装された4段階のUIです。`CameraControl.Joystick.MoveSpeed`は
+`×1`時の基準速度です。
 
 ### 17.4 Fesランクとカメラ種別
 
